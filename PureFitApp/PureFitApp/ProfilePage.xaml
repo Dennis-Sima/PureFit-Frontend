@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+              xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.ProfilePage"
+             xmlns:vm="clr-namespace:PureFitApp.ViewModels"
+
+             BackgroundColor="#1E5470"
+             Title="My Profile"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.Content >
+        <ScrollView>
+            <StackLayout >
+
+                <FlexLayout  
+                     Wrap="Wrap"
+                         AlignItems="Stretch"
+                             Margin="20,0,20,0"   
+                             HorizontalOptions="CenterAndExpand" 
+                            HeightRequest="120" 
+                             WidthRequest="460">
+                    <Label 
+                        Margin="0,0,10,0"
+                          Text="Good to see you"
+                          TextColor="White" 
+                          FontSize="35">
+                    </Label>
+
+                    <Label  
+                          
+                          Text="{Binding KundenData.Vorname}"
+                          TextColor="White" 
+                          FontSize="35">
+                    </Label>
+                    <Label  
+                          
+                          Text="!"
+                          TextColor="White" 
+                          FontSize="35">
+                    </Label>
+                </FlexLayout>
+
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
+
+                <FlexLayout  
+                    Padding="10"
+                    AlignItems="Stretch"
+                    Margin="20,0,20,0"   
+                    HorizontalOptions="CenterAndExpand" 
+                    MinimumHeightRequest="100"
+                    WidthRequest="460"
+                    Wrap="Wrap"
+                    AlignContent="Stretch">
+                    <Image  MinimumWidthRequest="400" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Source="{local:ImageResource PureFitApp.Resources.MusterProfile.jpg}"  Margin="70,0,0,0" />
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Margin="30,30,0,0" >
+                            <Grid>
+                                <!--Label -->
+                            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="#F5DFCB">Vorname</Label>
+                                <!--Inhalt -->
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding KundenData.Vorname}" FontAttributes="Bold" TextColor="White"/>
+                            </Grid>
+                            <Grid>
+                                <!--Label -->
+                            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="#F5DFCB" >Nachname</Label>
+                                <!--Inhalt -->
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding KundenData.Zuname}" FontAttributes="Bold" TextColor="White"/>
+                            </Grid>
+                            <Grid>
+                                <!--Label -->
+                            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="#F5DFCB">E-Mail</Label>
+                                <!--Inhalt -->
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding KundenData.Email}" FontAttributes="Bold" TextColor="White"/>
+                            </Grid>
+                            <Grid>
+                                <!--Label -->
+                            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="#F5DFCB">Geburtsdatum</Label>
+                                <!--Inhalt -->
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding KundenData.GebDatum}" FontAttributes="Bold" TextColor="White"/>
+                            </Grid>
+                            <Grid>
+                                <!--Label -->
+                            <Label Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="#F5DFCB">Trainingslevel</Label>
+                                <!--Inhalt -->
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding KundenData.Trainingslevel}" FontAttributes="Bold" TextColor="White"/>
+                            </Grid>
+                    </StackLayout>
+                </FlexLayout>
+
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
+
+                <Label   
+                          HorizontalOptions="FillAndExpand" 
+                          Text="My Data"
+                          TextColor="White" 
+                          FontSize="25" 
+                          HorizontalTextAlignment="Center">
+                </Label>
+                <ListView x:Name="NavigationList"  BackgroundColor="LightGray" WidthRequest="400"  HeightRequest="280" SeparatorVisibility="None" HasUnevenRows="true" HorizontalOptions="Center" ItemSelected="ProfileList_ItemSelected">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type local:NavigationItem}" >
+                            <local:NavigationItem Title="personal data"  TargetType="{x:Type local:PersonalProfilePage}" />
+                            <local:NavigationItem Title="contact data" TargetType="{x:Type local:DashboardPage}" />
+                            <local:NavigationItem Title="change Password" TargetType="{x:Type local:DashboardPage}" />
+                            <local:NavigationItem Title="change Username" TargetType="{x:Type local:DashboardPage}" />
+                            <local:NavigationItem  Title="delete Account" TargetType="{x:Type local:DashboardPage}"   />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                                    <Label  TextColor="Black" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" 
+                                   Text="{Binding Title}" FontSize="20"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

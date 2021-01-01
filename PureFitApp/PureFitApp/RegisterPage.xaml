@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              Appearing="ContentPage_Appearing"
+              xmlns:local="clr-namespace:PureFitApp"
+             xmlns:vm="clr-namespace:PureFitApp.ViewModels"
+             x:Class="PureFitApp.RegisterPage"
+             BackgroundImageSource="{local:ImageResource PureFitApp.Resources.background.png}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#1E5470</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+
+                <Label HeightRequest="160"  
+                          HorizontalOptions="FillAndExpand" 
+                          Text="Welcome"
+                          TextColor="White" 
+                          FontSize="40" 
+                          HorizontalTextAlignment="Center"
+                          VerticalTextAlignment="Center">
+                </Label>
+                <Label   
+                          HorizontalOptions="FillAndExpand" 
+                          Text="Please enter personal Infos"
+                          TextColor="White" 
+                          FontSize="25" 
+                          HorizontalTextAlignment="Center">
+                </Label>
+                <!--Username -->
+                <Entry   Margin="20,0,20,0" 
+                         HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          HorizontalOptions="Center" 
+                          TextColor="Black"
+                       FontSize="21"
+                         
+                         PlaceholderColor="Gray"
+                         x:Name="Username" 
+                        Placeholder="Username">
+                    
+
+                </Entry>
+                <!--Firstname -->
+                <Entry   Margin="20,0,20,0" 
+                        HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                           TextColor="Black"
+                       FontSize="21"
+                           HorizontalOptions="Center" 
+                         PlaceholderColor="Gray"
+                         x:Name="Firstname" 
+                        Placeholder="Firstname"
+                         Keyboard="Numeric">
+
+                </Entry>
+                <!--Surname -->
+                <Entry   Margin="20,0,20,0" 
+                         HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          TextColor="Black"
+                       FontSize="21"
+                         HorizontalOptions="Center" 
+                         PlaceholderColor="Gray"
+                         x:Name="Surname" 
+                        Placeholder="Surname">
+
+                </Entry>
+                <!--Password -->
+
+                <Entry  Margin="20,0,20,0" 
+                       x:Name="Password"
+                         TextColor="Black"
+                       FontSize="21"
+                         HorizontalOptions="Center" 
+                         PlaceholderColor="Gray"
+                        HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                        IsPassword="true"
+                        Placeholder="Password">
+
+                </Entry>
+
+
+
+                <Grid
+                    
+                             Margin="20,10,20,0"     
+                             HorizontalOptions="Center" 
+                            HeightRequest="90" 
+                             WidthRequest="460">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Label   
+                  Grid.Column="0"
+                          Text="Height"
+                          TextColor="White" 
+                          FontSize="21">
+                    </Label>
+                    <Label   
+                  Grid.Column="1"
+                          Text="Weight"
+                          TextColor="White" 
+                          FontSize="21">
+                    </Label>
+                    <Label
+                        Grid.Column="2"
+                          Text="Gender"
+                          TextColor="White"
+                            HorizontalOptions="Center"
+                          HorizontalTextAlignment="Start"
+                          FontSize="21">
+                    </Label>
+                    <!-- 2 Reihe-->
+                    <!--Height -->
+                    <Entry 
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                            Grid.Column="0" Grid.Row="1"   
+                       x:Name="Height"
+                         TextColor="Black"
+                        Keyboard="Numeric"
+                       FontSize="21"
+                           BackgroundColor="White">
+
+                    </Entry>
+                    <!--Weight -->
+                    <Entry 
+                       HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                         Grid.Column="1" Grid.Row="1"
+                       x:Name="Weight"             
+                        Keyboard="Numeric"
+                         TextColor="Black"
+                       FontSize="21">
+
+                    </Entry>
+                    <Picker
+                   HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                         Grid.Column="2" Grid.Row="1"
+                        
+                         TextColor="Black"
+                        FontSize="21"
+                         x:Name="Gender" 
+                        BackgroundColor="White"
+                        >
+                        <Picker.Items>
+                            <x:String>none</x:String>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>other</x:String>
+                        </Picker.Items>
+
+                    </Picker>
+                </Grid>
+                
+                <!--Geburtstag-Datum -->
+                <Label   
+                    Margin="20,10,20,0"
+                          Text="Birthday"
+                          TextColor="White" 
+                          FontSize="21" 
+                     HorizontalOptions="Center"
+                          HorizontalTextAlignment="Start">
+                </Label>
+                <DatePicker x:Name="Gebdate" 
+                            FontSize="21"
+                            TextColor="Gray"
+                            BackgroundColor="White"
+                            Margin="20,0,20,0" 
+                            HeightRequest="80"
+                               WidthRequest="460"
+                           HorizontalOptions="Center" />
+
+                <!--Email -->
+                <Entry    Margin="20,-30,20,0" 
+                        HeightRequest="50" 
+                         MaxLength="460"
+                          Keyboard="Email"
+                           HorizontalOptions="Center" 
+                         WidthRequest="460"
+                          TextColor="Black"
+                       FontSize="21"
+                         PlaceholderColor="Gray"
+                         x:Name="Email" 
+                        Placeholder="Email">
+
+                </Entry>
+
+                <!--Telefonnummer -->
+                <Entry    Margin="20,0,20,0" 
+                          HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          TextColor="Black"
+                       FontSize="21"
+                          Keyboard="Telephone"
+                           HorizontalOptions="Center" 
+                         PlaceholderColor="Gray"
+                         x:Name="Phone" 
+                        Placeholder="phone">
+
+                </Entry>
+                
+                <!--Trainingslevel -->
+                <Label   
+                   Margin="20,10,20,0"
+                          Text="Trainingslevel"
+                          TextColor="White" 
+                          FontSize="21" 
+                     HorizontalOptions="Center"
+                          HorizontalTextAlignment="Start">
+                </Label>
+                
+                <Picker 
+                  Margin="20,0,20,0" 
+                    HorizontalOptions="Center" 
+                    HeightRequest="60"
+                   WidthRequest="460"
+               TextColor="Black"
+                  BackgroundColor="White"
+                    x:Name="Trainingslevel" 
+                       FontSize="21"
+                        SelectedIndex="1"
+                         TitleColor="White"  
+         ItemsSource="{Binding Trainingslevels}" 
+                     ItemDisplayBinding="{Binding Name}"
+                                        SelectedItem="{Binding KundenData.Trainingslevel}" />
+
+
+
+                
+
+                <FlexLayout  AlignItems="Center" 
+                             Margin="20,0,0,0"     
+                             HorizontalOptions="Center" 
+                            HeightRequest="50" 
+                             WidthRequest="460">
+                    <CheckBox  x:Name="check"  Color="Black"/>
+                    <Label FontSize="21" TextColor="White" Text="Agree with terms and contitions"/>
+                </FlexLayout>
+                
+               
+
+
+                <Button Margin="20,0,20,0" 
+                         HeightRequest="40" 
+                         WidthRequest="460"
+                        
+                         x:Name="s" 
+                       Text="Back to login" 
+                        TextColor="White"
+                        Clicked="Login_Clicked" 
+                        CornerRadius="20"  
+                         BorderColor="Transparent"
+                BackgroundColor="Transparent"
+                        
+                     HorizontalOptions="Center"/>
+
+                <Button Margin="20,0,20,50" 
+                         HeightRequest="50" 
+                         TextColor="White" 
+                         WidthRequest="460"
+                          x:Name="Login" 
+                        Text="register" 
+                        Clicked="Register_Clicked" 
+                        CornerRadius="20"  
+                         BackgroundColor="Gray"
+                         HorizontalOptions="Center"/>
+                
+               
+
+
+
+
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.QuotePage"
+             Title="Quote Of The Day"
+             x:Name="page"
+             BackgroundImageSource="{local:ImageResource PureFitApp.Resources.QuotesBild.jpeg}">
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"  Text="Strength does not come from the physical capacity. It comes from an indomitable will."/>
+            <Label TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Italic" Text="-Ghandi" FontSize="Default"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.TermsPage"
+             Title="Terms and Conditions"
+             BackgroundColor="#1E5470">
+   
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Image Source="{local:ImageResource PureFitApp.Resources.logo.png}" WidthRequest="260" HeightRequest="260" HorizontalOptions="Center"/>
+                </Grid>
+                <Grid>
+                    <Label TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="15,0,15,0">
+                        The protection of your personal data is of particular concern to us. We therefore process your data exclusively on the basis of the legal provisions (GDPR, TKG 2003). In this data protection information we inform you about the most important aspects of data processing on our website.
+
+Contact us
+If you contact us using the form on the website or by e-mail, your data will be stored for six months in order to process the request and in the event of follow-up questions. We will not pass on this data without your consent.
+
+Data storage
+We would like to point out that for the purpose of a simpler shopping process and for later contract processing, the web shop operator saves the IP data of the connection holder, as well as the name, address and credit card number [...] of the buyer.
+In addition, the following data is also stored with us for the purpose of contract processing: name, gender, weight, age, height. The data you provide is required to fulfill the contract or to carry out pre-contractual measures. Without this data, we cannot conclude the contract with you. A data transfer to third parties does not take place, with the exception of the transfer of credit card data to the processing bank / payment service provider for the purpose of debiting the purchase price, to the transport company / shipping company commissioned by us to deliver the goods and to our tax advisor to fulfill our tax obligations.
+After the purchase process is canceled, the data stored by us will be deleted. In the event of a contract being concluded, all data from the contractual relationship will be stored until the tax retention period (7 years) expires. The data name, address, purchased goods and date of purchase are also stored until product liability expires (10 years). The data processing takes place on the basis of the legal provisions of § 96 Paragraph 3 TKG as well as Art 6 Paragraph 1 lit a (consent) and / or lit b (necessary to fulfill the contract) of the GDPR.
+            
+Cookies
+Our website uses so-called cookies. These are small text files that are stored on your device using the browser. They do no harm.
+We use cookies to make our offer user-friendly. Some cookies remain on your device until you delete them. They enable us to recognize your browser the next time you visit us.
+If you do not want this, you can set up your browser so that it informs you about the setting of cookies and you only allow this in individual cases.
+If cookies are deactivated, the functionality of our website may be restricted.
+
+Newsletter
+You have the option of subscribing to our newsletter via our website. For this we need your email address and your declaration that you agree to receive the newsletter.
+You can cancel your subscription to the newsletter at any time. Please send your cancellation to the following email address: purefit@mail.com. We will then immediately delete your data in connection with sending the newsletter. This revocation does not affect the legality of the processing carried out based on the consent until the revocation.
+
+Your rights
+You have the right to information, correction, deletion, restriction, data portability, revocation and objection to your data stored with us. If you believe that the processing of your data violates data protection law or your data protection claims have otherwise been violated, you can complain to purefit@mail.com or the data protection authority.
+
+You can reach us using the following contact details:
+purefit@mail.com
+                    </Label>
+                </Grid>
+                <Label TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Italic" FontSize="Medium" Margin="0,0,0,30">Your PureFit Team</Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

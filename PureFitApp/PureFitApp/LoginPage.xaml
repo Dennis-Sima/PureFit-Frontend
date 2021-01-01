@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.LoginPage"
+             BackgroundImageSource="{local:ImageResource PureFitApp.Resources.background.png}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#1E5470</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Grid>
+                    <Image Source="{local:ImageResource PureFitApp.Resources.logo.png}" WidthRequest="260" HeightRequest="260" HorizontalOptions="Center"/>
+                </Grid>
+                <Entry  Margin="20,40,20,0"          
+                         HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          HorizontalOptions="Center" 
+                         x:Name="Username" 
+                        Placeholder="Username">
+
+                </Entry>
+
+                <Entry  Margin="20,0,20,0" 
+                         HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          HorizontalOptions="Center" 
+                       x:Name="Password"
+                       IsPassword="true"
+                        Placeholder="Password">
+
+                </Entry>
+
+                <FlexLayout  AlignItems="Center" 
+                             Margin="20,0,0,0"     
+                             HorizontalOptions="Center" 
+                            HeightRequest="50" 
+                             WidthRequest="460">
+                    <Label Text="Keep me sign in " Padding="5" TextColor="{StaticResource primary}"/>
+                    <CheckBox  x:Name="check"  Color="{StaticResource primary}"/>
+                </FlexLayout>
+                
+                <Button Margin="20,0,20,0" 
+                         HeightRequest="50" 
+                          WidthRequest="460"
+                         TextColor="White" 
+                          x:Name="Login" 
+                        Text="Login" 
+                        Clicked="Login_Clicked" 
+                        CornerRadius="20"  
+                         BackgroundColor="Gray"
+                          HorizontalOptions="Center"/>
+                
+                <Button Margin="20,0,20,50" 
+                         HeightRequest="50" 
+                          WidthRequest="460"
+                         HorizontalOptions="Center"
+                         x:Name="s" 
+                       Text="I don't have an acount" 
+                        Clicked="Sign_Clicked" 
+                        CornerRadius="20"  
+                         BorderColor="Transparent"
+                BackgroundColor="Transparent"
+                       
+                         TextColor="{StaticResource primary}"/>
+
+               
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

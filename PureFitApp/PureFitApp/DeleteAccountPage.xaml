@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PureFitApp.DeleteAccountPage"
+             xmlns:local="clr-namespace:PureFitApp"
+             xmlns:vm="clr-namespace:PureFitApp.ViewModels"
+             BackgroundColor="#1E5470"
+              Title="delete account"
+            BackgroundImageSource="{local:ImageResource PureFitApp.Resources.background.png}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#1E5470</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1E5470">
+
+
+            <FlexLayout  
+                         AlignItems="Stretch"
+                             Margin="20,0,20,0"   
+                             HorizontalOptions="CenterAndExpand" 
+                    MinimumHeightRequest="300"
+                             WidthRequest="460"
+                    Wrap="Wrap"
+                    AlignContent="Stretch"
+                   
+                  >
+
+                <StackLayout >
+                    <StackLayout   MinimumHeightRequest="100" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Margin="0,0,0,0">
+
+
+                        <Label   
+                          Text="To delete your account"
+                          TextColor="White"
+                            FontSize="18">
+                            
+                        </Label>
+                        <Label   
+                          Text="Please enter your login information again:"
+                          TextColor="White"
+                            FontSize="18">
+                        </Label>
+                        <Label   
+                          Text="This cannot be undone!"
+                          TextColor="Red"
+                            FontSize="18"></Label>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+
+                <Image  WidthRequest="100"  MinimumHeightRequest ="140" Source="{local:ImageResource PureFitApp.Resources.deleteUserIcon.png}"  Margin="0,20,0,0" />
+
+            </FlexLayout>
+
+            <!-- Username-->
+            <Entry   Margin="20,20,20,0" 
+                         HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                          HorizontalOptions="Center" 
+                          TextColor="Black"
+                       FontSize="21"
+                         
+                         PlaceholderColor="Gray"
+                         x:Name="Username" 
+                        Placeholder="Username">
+
+
+            </Entry>
+            <!--Password-->
+            <Entry  Margin="20,0,20,0" 
+                       x:Name="Password"
+                         TextColor="Black"
+                       FontSize="21"
+                         HorizontalOptions="Center" 
+                         PlaceholderColor="Gray"
+                        HeightRequest="50" 
+                         MaxLength="460"
+                         WidthRequest="460"
+                        IsPassword="true"
+                        Placeholder="Password">
+            </Entry>
+            
+            <!--delete Button-->
+            <Button 
+                         x:Name="save" 
+                       Text="delete account" 
+                         Clicked="Save"
+                        TextColor="White"
+                        CornerRadius="20"  
+                         BorderColor="Transparent"
+                BackgroundColor="Red"
+                             Margin="20,0,20,0"     
+                             HorizontalOptions="Center" 
+                            HeightRequest="30" 
+                             WidthRequest="200"/>
+            <Label ></Label>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

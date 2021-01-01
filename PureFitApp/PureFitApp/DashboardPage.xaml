@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Startseite für die App. -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PureFitApp.DashboardPage"
+             xmlns:local="clr-namespace:PureFitApp"
+             BackgroundImageSource="{local:ImageResource PureFitApp.Resources.DashboardBild.jpg}"
+             x:Name="page"
+             Title="Home">
+    <ContentPage.Content>
+        <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center"> 
+            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" Text="Hey, whats up?" TextColor="White"/>
+            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" Text="Ready to start a workout?" TextColor="White"/>
+            <Label Text=""/>
+            <Button Margin="20,0,20,50" 
+                         HeightRequest="70" 
+                          WidthRequest="70"
+                         HorizontalOptions="Center"
+                         x:Name="start" 
+                       Text="start" 
+                    FontSize="Medium"
+                        Clicked="startWorkout" 
+                        CornerRadius="50"  
+                         BorderColor="Black"
+                BackgroundColor="Yellow"
+                         TextColor="Black"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

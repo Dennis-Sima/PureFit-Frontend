@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.AboutPage"
+             Title="About Us"
+             BackgroundColor="#1E5470">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Grid>
+                <Image Source="{local:ImageResource PureFitApp.Resources.logo.png}" WidthRequest="260" HeightRequest="260" HorizontalOptions="Center"/>
+            </Grid>
+            <FlexLayout  
+                    AlignItems="Stretch"
+                    Margin="20,0,20,0"   
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="800"
+                    Wrap="Wrap"
+                    AlignContent="Stretch">
+                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Margin="20,10,0,0">
+                        <Frame BorderColor="White">
+                            <Label HorizontalOptions="Center" TextColor="White" VerticalOptions="Center">PureFit ist eine App die von 5 Schülern der HTL Spengergasse gemacht wurde. Diese App soll allen sportbegeisterten Menschen helfen um ihre Workouts durchzuführen, sie zu tracken als auch motiviert zu werden. </Label>
+                        </Frame>
+                        <Frame BorderColor="White">
+                            <Grid>
+                                <Label VerticalOptions="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="White">Dennis Sima</Label>
+                                <Label Grid.Column="1" Grid.Row="0" TextColor="White">Dennis Sima ist Mitglied der Gruppe Team Workout und ist sportlich sehr motiviert! Seine sportliche Leidenschaft ist das Laufen, weshalb Dennis eine sehr fitte und sportliche Person ist. Gemeinsam mit 4 weiteren Freunden wollte Dennis eine App machen die im bei der Organisation seiner Workouts hilft.</Label>
+                            </Grid>
+                        </Frame>
+                        <Frame BorderColor="White">
+                            <Grid>
+                                <Label VerticalOptions="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="White">Manuel Mindic</Label>
+                            <Label Grid.Column="1" Grid.Row="0" TextColor="White">Genau wie Dennis ist Manuel auch ein Mitglied der Gruppe Team Workout, und ist auch beteiligt bei der Erschaffung der App PureFit. Zu Manuel´s sportlichen Leidenschaften zählen Fußball und Cardio. Manuel kann durch die App seine Ausdauer stärken.</Label>
+                    </Grid>
+                        </Frame>
+                        <Frame BorderColor="White">
+                            <Grid>
+                                <Label VerticalOptions="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="White">Paul Maurovich</Label>
+                            <Label Grid.Column="1" Grid.Row="0" TextColor="White">Paul Maurovich ist Mitglied der Gruppe Team Workout und ist sportlich sehr motiviert! Seine sportliche Leidenschaft ist das Schwimmen, weshalb Paul eine sportliche Person ist. Paul will auch seine Workouts zuhause ausüben, weshalb er die Funktionen von PureFit stark genießt!</Label>
+                    </Grid>
+                        </Frame>
+                        <Frame BorderColor="White">
+                            <Grid>
+                                <Label VerticalOptions="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="White">Julian Waldherr</Label>
+                            <Label Grid.Column="1" Grid.Row="0" TextColor="White">Genau so wie alle auf dieser Seite, ist Julian auch einer der Mitglieder von Team Workout, und ist auch beteiligt bei der Erschaffung von PureFit. Julian will seit kurzer Zeit sportlicher werden, jedoch kann er das nicht da es in seiner nähe keine Fitnessstudios gib, weshalb die App PureFit sehr gelegen kommt für Julian.</Label>
+                        </Grid>
+                        </Frame>
+                        <Frame BorderColor="White">
+                            <Grid>
+                                <Label VerticalOptions="Center" Grid.Column="0" Grid.Row="0" FontAttributes="Bold" TextColor="White">Patrik Stegner</Label>
+                            <Label Grid.Column="1" Grid.Row="0" TextColor="White">Patrik ist eine sehr sportliche Person, welche ihren Lieblingsport auch in einem Verein ausübt. Da er sich noch weiter entwickeln möchte und seine Workouts besser planen will braucht er eine App dazu. Deshalb schloss sich Patrik auch mit den restlichen Mitgliedern von Team Workout zusammen und half mit bei der Vision namens PureFit!</Label>
+                    </Grid>
+                        </Frame>
+                    </StackLayout>
+            </FlexLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

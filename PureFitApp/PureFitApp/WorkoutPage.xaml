@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+              xmlns:local="clr-namespace:PureFitApp"
+             x:Class="PureFitApp.WorkoutPage"
+             xmlns:vm="clr-namespace:PureFitApp.ViewModels"
+
+             BackgroundImageSource="{local:ImageResource PureFitApp.Resources.background.png}"
+              Title="My Workouts"
+             Appearing="ContentPage_Appearing">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+            IconImageSource="{local:ImageResource PureFitApp.Resources.add.png}"
+            Order="Primary"  
+            Command="{Binding NewItem}"
+            Priority="0" />
+        <ToolbarItem Text="Edit"
+            IconImageSource="{local:ImageResource PureFitApp.Resources.edit.png}"
+            Order="Primary"  
+            Command="{Binding EditItem}"
+            Priority="1" />
+        <ToolbarItem Text="Delete"
+            IconImageSource="{local:ImageResource PureFitApp.Resources.delete.png}"
+            Order="Primary"
+            Command="{Binding DeleteItem}"
+            Priority="2" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+            <ListView x:Name="Workouts" ItemsSource="{Binding FitnessHistory}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout>
+                                <Image WidthRequest="400"  Source="{Binding Image}"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Übungsname</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding UebungsName}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Trainierter Muskel</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding MuskelName}" FontAttributes="Bold" TextColor="White" />
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Datum</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Bewertung des Workouts</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Bewertung}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">eingetragene Uebungsnummer</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding UebungsNr}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Dauer der ganzen Übung</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Dauer}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Beschreibung</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Beschreibung}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Wiederholungen</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Wiederholungen}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Schwierigkeitsgrad</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding SchwierigkeitsgradName}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+
+                                    <Grid 
+                                        Margin="20,10,20,0"     
+                                        HorizontalOptions="Center" 
+                                        HeightRequest="20" 
+                                        WidthRequest="460">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="40"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- 2 Reihe-->
+                                        <!--Label -->
+                                        <Label Grid.Column="0" Grid.Row="0">Kalorienverbrauch</Label>
+                                        <!--Inhalt -->
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Kalorien}" FontAttributes="Bold" TextColor="White"/>
+                                    </Grid>
+                                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
+                                </StackLayout>
+                            </FlexLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
